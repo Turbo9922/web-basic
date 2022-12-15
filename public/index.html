@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TURBO</title>
+
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=EB+Garamond:wght@700&family=Josefin+Sans:wght@400;500&family=Kanit&family=Merriweather:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700;900&family=Signika:wght@300;400;500;600;700&family=Zen+Antique&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/47929a4c3f.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+
+
+
+
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">
+                <img src="https://media.discordapp.net/attachments/500196124783542284/1049701165610307694/0A644C71-EFD0-4B35-B8AA-E52C6EF9C634.png?width=396&height=512"
+                    class="logonav">
+            </a>
+
+            <div class="nav-profile">
+                <p class="nav-profile-name">SHOP KUB</p>
+                <div onclick="openCart()" style="cursor:pointer ;" class="nav-profile-cart">
+                    <i class="fas fa-cart-shopping"></i>
+                    <div id="cartcount" class="cartcount" style="display: none;">
+                        0
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="sideber">
+            <input onkeyup="searchsomething(this)" id="txt_search" type="text" class="sideber-search"
+                placeholder="Search ....">
+
+            <a onclick="searchproduct('all')" class="sidebar-items">
+                All productBO
+            </a>
+            <a onclick="searchproduct('สมุนไพรจีน')" class="sidebar-items">
+                สมุนไพรจีน
+            </a>
+            <a onclick="searchproduct('ชาสมุนไพรญี่ปุ่น')" class="sidebar-items">
+                ชาสมุนไพรญี่ปุ่น
+            </a>
+            <a onclick="searchproduct('สมุนไพรเกาหลี')" class="sidebar-items">
+                สมุนไพรเกาหลี
+            </a>
+        </div>
+        <div id="productlist" class="product">
+
+
+
+        </div>
+    </div>
+    <div id="modalDesc" class="modal" style="display: none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
+        <div class="modal-page">
+            <h2>Turbo</h2>
+            <br>
+            <div class="modaldesc-content">
+                <img id="mdd-img" class="modaldesc-img"
+                    src="https://media.discordapp.net/attachments/962325817319387166/1049223525145255976/63ED8C85-E803-43C9-B14E-61C58BACEBBC.png?width=385&height=513"
+                    alt="">
+                <div class="modaldesc-detail">
+                    <p id="mdd-name" style="font-size: 1.5vw;">Product name</p>
+                    <br>
+                    <p id="mdd-price" style="font-size: 1vw;">500 THB</p>
+                    <br>
+                    <p id="mdd-desc" style="color:#000;">dddd</p>
+                    <br>
+                    <br>
+                    <div class="btn-control">
+                        <button onclick="closeModal()" class="btn">
+                            Close
+                        </button>
+                        <button onclick="addtocart()" class="btn btn-buy">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modalCart" class="modal" style="display: none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
+        <div class="modal-page">
+            <h2>SHOP BO</h2>
+            <br>
+            <div id="mycart" class="cartlist">
+
+
+
+            </div>
+            <div class="btn-control">
+                <button onclick="closeModal()" class="btn">
+                    Cancel
+                </button>
+                <button class="btn btn-buy">
+                    Buy
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
